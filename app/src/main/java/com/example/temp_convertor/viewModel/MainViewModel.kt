@@ -8,9 +8,7 @@ import com.example.temp_convertor.util.Operations.temperatureConvertor
 
 class MainViewModel : ViewModel() {
     val color = MutableLiveData<MyColors>()
-
     val fahrenheitTemp = MutableLiveData<String>()
-
     val celsiusTemp = MutableLiveData<String>()
 
     private val mediator = MediatorLiveData<String>().apply {
