@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.temp_convertor.viewModel.MainViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        myColors="@{viewModel.color}"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+        <io.armcha.elasticview.ElasticView
+            android:id="@+id/viewCard"
+            style="@style/Widget.App.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="18dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:flexibility="7"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:hint="@string/enter_fahrenheit_temp"
+                android:inputType="number"
+                android:text="@={viewModel.fahrenheitTemp}"
+                android:textColor="@color/black"
+                android:textSize="28sp" />
+        </io.armcha.elasticview.ElasticView>
+
+        <TextView
+            android:id="@+id/display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{@string/Celsius_Symbol(viewModel.celsiusTemp)}"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewCard" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
