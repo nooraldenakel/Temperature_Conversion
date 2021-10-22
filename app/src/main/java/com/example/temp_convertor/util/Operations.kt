@@ -6,11 +6,7 @@ import kotlin.math.roundToInt
 object Operations {
 
     fun temperatureConvertor(value: String): Int {
-        return if (value.isNullOrBlank()) {
-            0
-        } else {
-            value.toDouble().minus(32).div(1.8).roundToInt()
-        }
+        return if (value.isNullOrBlank()) 0 else value.toDouble().minus(32).div(1.8).roundToInt()
     }
 
     fun changeColorDependOnTemp(value: Int, color: MutableLiveData<MyColors>) =
