@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-            .also {
-                it.viewModel = viewModel
-                it.lifecycleOwner = this
+            .also {binding->
+                binding.viewModel = viewModel
+                binding.lifecycleOwner = this
             }
     }
 }
